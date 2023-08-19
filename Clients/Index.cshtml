@@ -1,0 +1,48 @@
+﻿@page
+@model Mystore.Pages.Clients.IndexModel
+@{
+}
+
+<br>
+<h2>LIST OF CLINTS</h2>
+<a class='btn btn-primary btn-sm' href='/Clients/Create'>NEW CLIENTS</a>
+<table class="table">
+    <thead>
+    <tr>
+
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Phone</th>
+        <th>Address</th>
+        <th>Action</th>
+
+    </tr>
+
+    </thead>
+
+    <tbody>
+        @foreach(var item in Model.ListClients)
+        {
+            <tr>
+
+                <th>@item.id</th>
+                <th>@item.name</th>
+                <th>@item.email</th>
+                <th>@item.phone</th>
+                <th>@item.address</th>
+                <th>@item.create_ad</th>
+                <td>
+                    <a class='btn btn-primary btn-sm' href='/Clients/Edit?id=@item.id'>Edit</a>
+
+                    <a class='btn btn-primary btn-sm' href='/Clients/Delete?id=@item.id'>DELETE</a>
+
+                    
+
+
+                </td>
+
+            </tr>
+        }
+    </tbody>
+</table>
